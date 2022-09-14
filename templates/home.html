@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madlibs Generator</title>
+    <link rel="stylesheet" href="/static/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+        <div class="container">
+            <div class="form-container">
+        <h1>Madlibs</h1>
+        <form action="/story">
+            {% for prompt in prompts %}
+            <label for="place_input">{{ prompt.upper() }}:</label>
+            <input id="place_input" type="text" required name="{{prompt}}" placeholder="type a {{prompt}}">
+            {% endfor %}
+            <button>Submit</button>
+        </form>
+            </div>
+        </div>
+</body>
+</html>
